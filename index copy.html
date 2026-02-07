@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f8fafc;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 90%;
+        }
+        h2 {
+            text-align: center;
+            color: #0f172a;
+            margin-bottom: 25px;
+        }
+        input[type="text"], input[type="number"], input[type="tel"], textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button[type="submit"]:hover {
+            background-color: #1d4ed8;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #334155;
+        }
+        .symptoms {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .symptom-item {
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Patient Details</h2>
+
+    <!-- Toggle to Elderly Mode -->
+    <a href="elderly-mode.html" style="display:block; text-align:center; margin-bottom:20px; text-decoration:none; background:#64748b; color:white; padding:12px; border-radius:50px; font-weight:bold;">👴 Switch to Elderly Friendly Mode</a>
+
+    <!-- Toggle to Hindi Voice Mode -->
+    <a href="bhasha-setu.html" style="display:block; text-align:center; margin-bottom:20px; text-decoration:none; background:#ea580c; color:white; padding:12px; border-radius:50px; font-weight:bold;">🇮🇳 Bhasha-Setu (Hindi Voice Mode)</a>
+
+    <form id="patientForm">
+
+
+        <label>Name</label>
+        <input type="text" required>
+
+        <label>Age</label>
+        <input type="number" required>
+
+        <label>Phone</label>
+        <input type="tel" required>
+
+        <label>Symptoms</label>
+        <div class="symptoms">
+            <label class="symptom-item">
+                <input type="checkbox"> Fever
+            </label>
+
+            <label class="symptom-item">
+                <input type="checkbox"> Cough
+            </label>
+
+            <label class="symptom-item">
+                <input type="checkbox"> Chest Pain
+            </label>
+
+            <label class="symptom-item">
+                <input type="checkbox"> Breathlessness
+            </label>
+
+            <label class="symptom-item">
+                <input type="checkbox"> Fatigue
+            </label>
+        </div>
+
+        <label>Existing Conditions (optional)</label>
+        <textarea rows="3"></textarea>
+
+        <button type="submit">Generate Token</button>
+
+    </form>
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
